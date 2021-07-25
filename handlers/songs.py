@@ -24,9 +24,9 @@ from youtube_dl.utils import (
 async def song(client, message):
     cap = "@JEBotZ"
     url = message.text.split(None, 1)[1]
-    rkp = await message.reply("Processing...")
+    rkp = await message.reply("@oldBMB üçün yüklənir...")
     if not url:
-        await rkp.edit("**What's the song you want?**\nUsage`/song <song name>`")
+        await rkp.edit("**Hansı mahnını yükləyim?**\nUsage`/song <song name>`")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
     test = search.result()
     p = json.loads(test)
@@ -34,7 +34,7 @@ async def song(client, message):
     try:
         url = q[0]["link"]
     except BaseException:
-        return await rkp.edit("Failed to find that song.")
+        return await rkp.edit("Mahnını tapa bilmədim.")
     type = "audio"
     if type == "audio":
         opts = {
@@ -65,34 +65,34 @@ async def song(client, message):
         await rkp.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await rkp.edit("`The download content was too short.`")
+        await rkp.edit("`Mahnı uzundur`")
         return
     except GeoRestrictedError:
         await rkp.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+            "Veb sayt tərəfindən qoyulmuş coğrafi məhdudiyyətlər səbəbindən video coğrafi məkandan əldə edilə bilməz.``"
         )
         return
     except MaxDownloadsReached:
-        await rkp.edit("`Max-downloads limit has been reached.`")
+        await rkp.edit("`Video uzundur`")
         return
     except PostProcessingError:
-        await rkp.edit("`There was an error during post processing.`")
+        await rkp.edit("`Sonrakı işləmə zamanı bir xəta baş verdi.`")
         return
     except UnavailableVideoError:
-        await rkp.edit("`Media is not available in the requested format.`")
+        await rkp.edit("`Media tələb olunan formatda mövcud deyil.`")
         return
     except XAttrMetadataError as XAME:
         await rkp.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
         return
     except ExtractorError:
-        await rkp.edit("`There was an error during info extraction.`")
+        await rkp.edit("`Məlumat çıxarılması zamanı xəta baş verdi.`")
         return
     except Exception as e:
         await rkp.edit(f"{str(type(e)): {str(e)}}")
         return
     time.time()
     if song:
-        await rkp.edit("Uploading...") #ImJanindu
+        await rkp.edit("yüklənir...") #ImJanindu
         lol = "./etc/thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
