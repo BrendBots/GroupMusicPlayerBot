@@ -7,25 +7,25 @@ from helpers.filters import other_filters2
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
-    await message.reply_sticker("CAACAgIAAx0CVtdbKgACib1g8ue6OWf2UMw7Bw8JkoseIpuzJgACIgADG-__NsuqcnFmC0PBHgQ")
+    await message.reply_sticker("CAACAgIAAx0CVtdbKgACwP9hLUNLBjE8B98QPApKGixyHEx-lAACbgwAAo1DiUolFuOVLYr4th4E")
     await message.reply_text(
         f"""**Salam, Mən {bn} 🎵
 
 Mən səslidə musiqi oxuyuram. Developed by [彡𝚕𝚌𝚓𝚗🎴](https://t.me/elcjn).
 
-yalnız @oldBMB üçün!**
+ @oldzona üçün**
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🛠Kanal🛠", url="https://t.me/BMBMMC")
+                        "🛠Kanal🛠", url="https://t.me/BrendBots")
                   ],[
                     InlineKeyboardButton(
-                        "💬 Group", url="https://t.me/oldBMB"
+                        "💬 Group", url="https://t.me/oldzona"
                     ),
                     InlineKeyboardButton(
-                        "🔊 Dəstəkçi", url="https://t.me/BrendUserBot"
+                        "Sahib", url="https://t.me/shirnovff"
                     )
                 ],[ 
                     InlineKeyboardButton(
@@ -43,7 +43,7 @@ async def gstart(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🔊 Channel", url="https://t.me/BMBmmc")
+                        "🔊 Qrup", url="https://t.me/oldzona")
                 ]
             ]
         )
