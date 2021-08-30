@@ -24,7 +24,7 @@ from youtube_dl.utils import (
 async def song(client, message):
     cap = "@oldBMB"
     url = message.text.split(None, 1)[1]
-    rkp = await message.reply("@oldBMB üçün yüklənir...")
+    rkp = await message.reply("@oldzona üçün yüklənir...")
     if not url:
         await rkp.edit("**Hansı mahnını yükləyim?**\nUsage`/song <song name>`")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
@@ -58,7 +58,7 @@ async def song(client, message):
         }
         song = True
     try:
-        await rkp.edit("yüklənir...")
+        await rkp.edit("yüklənir....)
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
