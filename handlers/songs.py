@@ -58,7 +58,7 @@ async def song(client, message):
         }
         song = True
     try:
-        await rkp.edit("yüklənir....)
+        await rkp.edit("yüklənir....")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
