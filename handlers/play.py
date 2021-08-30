@@ -152,8 +152,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Channel 🔊",
-                        url="https://t.me/BrendUserBot")
+                        text="Qrup 🔊",
+                        url="https://t.me/oldzona")
                    
                 ]
             ]
